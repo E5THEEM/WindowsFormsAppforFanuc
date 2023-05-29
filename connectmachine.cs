@@ -31,11 +31,11 @@ namespace WindowsFormsAppforFanuc
             if (ret != FanucOpe.EW_OK)
             {
                 //设备连接失败，返回ret错误代码
-                MessageBox.Show("设备连接失败" + "错误代码：" + ret);
+                MessageBox.Show("Device connection failed" + "Error code: " + ret);
             }
             else if (ret == FanucOpe.EW_OK)
             {
-                MessageBox.Show("设备连接成功！", "连接提示");
+                MessageBox.Show("Device connected successfully!", "Connection prompt");
                 textBox5.Text = FanucOpe.h.ToString();
             }
         }
@@ -43,7 +43,7 @@ namespace WindowsFormsAppforFanuc
         private void cancelbut_Click(object sender, EventArgs e)
         {
             short ret = FanucOpe.cnc_freelibhndl(FanucOpe.h);
-            MessageBox.Show("设备断开成功", "断开提示");
+            MessageBox.Show("Device disconnected successfully", "Disconnect prompt");
             textBox5.Text = "0";
         }
 
@@ -460,6 +460,21 @@ namespace WindowsFormsAppforFanuc
         private void datetimeupdate_Tick(object sender, EventArgs e)
         {
             this.showtime.Text = DateTime.Now.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox10_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }    
 }
